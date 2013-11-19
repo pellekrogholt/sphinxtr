@@ -326,7 +326,7 @@ multiple pages as done in Table |nbsp| :num:`fig-big-table-vertical`?
     :caption: A big table vertical
     :alt: A big table vertical
     :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} 
-    :nofig:
+    :longtable:
 
     +------------------+------------------+----------+----------+------------------+------------------+
     |Cell 1            |Cell 2            |Cell 3    |Cell 4    |Cell 5            |Cell 6            |
