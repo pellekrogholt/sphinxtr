@@ -1,8 +1,8 @@
 .. _ch-figs:
 
-******************
-Figures and Tables
-******************
+====================
+ Figures and Tables
+====================
 
 Vector SVG Figures
 ==================
@@ -211,7 +211,7 @@ raggedright.
 A text wrapping table example is shown in Figure |nbsp| :num:`fig-open3dhub-cfs`.
 
 CSV and List Tables
-=======================
+===================
 
 You can use CSV Table and List table from
 `docutils directives <http://docutils.sourceforge.net/docs/ref/rst/directives.html#tables>`_.
@@ -259,3 +259,219 @@ You can use CSV Table and List table from
 
 
 A CSV table example is shown in Figure |nbsp| :num:`table-csv` and List table in Figure |nbsp| :num:`table-list`.
+
+
+Big tables
+==========
+
+We might have a big table (Table |nbsp| :num:`fig-big-table`) which is
+perfectly fine in the world of HTML how can we deal within it in the
+world of latex/PDF? Can we rotate the table for PDF only?
+
+One way could perhaps be to let the table to span vertically over
+multiple pages as done in Table |nbsp| :num:`fig-big-table-vertical`?
+
+.. figtable::
+    :label: fig-big-table
+    :caption: A big table
+    :alt: A big table
+    :spec: >{\raggedright\arraybackslash}p{0.12\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth} p{0.08\linewidth}
+    :nofig:
+
+    +----------+------------------+-----------+----------+----------+----------+----------+----------+-----------+----------+----------+-----------+
+    |Cell 1    |Cell 2            |Cell long  |Cell 4    |Cell 5    |Cell 6    |Cell 7    |Cell 8    |Cell long  |Cell 10   |Cell 11   |Cell 12    |
+    |          |                  |header     |          |          |          |          |          |text 9     |          |          |           |
+    |          |                  |test 3     |          |          |          |          |          |           |          |          |           |
+    +==========+==================+===========+==========+==========+==========+==========+==========+===========+==========+==========+===========+
+    |Name 1    |Lorem ipsum dolor |Lorem ipsum|Short     |Short     |Short     |Short     |Short     |Lorem ipsum|Short     |Short     |Lorem ipsum|
+    |          |sit amet,         |dolor sit  |          |          |          |          |          |dolor sit  |short     |short     |dolor sit  |
+    |          |consectetur       |amet,      |          |          |          |          |          |amet,      |          |short     |amet.      |
+    |          |adipiscing        |consectetur|          |          |          |          |          |consectetur|          |          |           |
+    |          |elit. Pellentesque|adipiscing |          |          |          |          |          |adipiscing |          |          |           |
+    |          |vitae nisl        |elit.      |          |          |          |          |          |elit.      |          |          |           |
+    |          |imperdiet.        |           |          |          |          |          |          |           |          |          |           |
+    |          |                  |           |          |          |          |          |          |           |          |          |           |
+    +----------+------------------+-----------+----------+----------+----------+----------+----------+-----------+----------+----------+-----------+
+    |Name 2    |Lorem ipsum dolor |Lorem ipsum|Short     |Short     |Short     |Short     |Short     |Lorem ipsum|Short     |Short     |Lorem ipsum|
+    |          |sit amet,         |dolor sit  |          |          |          |          |          |dolor sit  |short     |short     |dolor sit  |
+    |          |consectetur       |amet,      |          |          |          |          |          |amet,      |          |short     |amet.      |
+    |          |adipiscing        |consectetur|          |          |          |          |          |consectetur|          |          |           |
+    |          |elit. Pellentesque|adipiscing |          |          |          |          |          |adipiscing |          |          |           |
+    |          |vitae nisl        |elit.      |          |          |          |          |          |elit.      |          |          |           |
+    |          |imperdiet.        |           |          |          |          |          |          |           |          |          |           |
+    |          |                  |           |          |          |          |          |          |           |          |          |           |
+    +----------+------------------+-----------+----------+----------+----------+----------+----------+-----------+----------+----------+-----------+
+    |Name 3    |Lorem ipsum dolor |Lorem ipsum|Short     |Short     |Short     |Short     |Short     |Lorem ipsum|Short     |Short     |Lorem ipsum|
+    |          |sit amet,         |dolor sit  |          |          |          |          |          |dolor sit  |short     |short     |dolor sit  |
+    |          |consectetur       |amet,      |          |          |          |          |          |amet,      |          |short     |amet.      |
+    |          |adipiscing        |consectetur|          |          |          |          |          |consectetur|          |          |           |
+    |          |elit. Pellentesque|adipiscing |          |          |          |          |          |adipiscing |          |          |           |
+    |          |vitae nisl        |elit.      |          |          |          |          |          |elit.      |          |          |           |
+    |          |imperdiet.        |           |          |          |          |          |          |           |          |          |           |
+    |          |                  |           |          |          |          |          |          |           |          |          |           |
+    +----------+------------------+-----------+----------+----------+----------+----------+----------+-----------+----------+----------+-----------+
+    |Name 3    |Lorem ipsum dolor |Lorem ipsum|Short     |Short     |Short     |Short     |Short     |Lorem ipsum|Short     |Short     |Lorem ipsum|
+    |          |sit amet,         |dolor sit  |          |          |          |          |          |dolor sit  |short     |short     |dolor sit  |
+    |          |consectetur       |amet,      |          |          |          |          |          |amet,      |          |short     |amet.      |
+    |          |adipiscing        |consectetur|          |          |          |          |          |consectetur|          |          |           |
+    |          |elit. Pellentesque|adipiscing |          |          |          |          |          |adipiscing |          |          |           |
+    |          |vitae nisl        |elit.      |          |          |          |          |          |elit.      |          |          |           |
+    |          |imperdiet.        |           |          |          |          |          |          |           |          |          |           |
+    |          |                  |           |          |          |          |          |          |           |          |          |           |
+    +----------+------------------+-----------+----------+----------+----------+----------+----------+-----------+----------+----------+-----------+
+
+
+.. figtable::
+    :label: fig-big-table-vertical
+    :caption: A big table vertical
+    :alt: A big table vertical
+    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} 
+    :nofig:
+
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Cell 1            |Cell 2            |Cell 3    |Cell 4    |Cell 5            |Cell 6            |
+    +==================+==================+==========+==========+==================+==================+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
+    |Lorem ipsum dolor |Lorem ipsum dolor |Short     |Short     |Lorem ipsum dolor |Lorem ipsum dolor |
+    |sit amet,         |sit amet,         |          |          |sit amet,         |sit amet,         |
+    |consectetur       |consectetur       |          |          |consectetur       |consectetur       |
+    |adipiscing        |adipiscing elit.  |          |          |adipiscing elit.  |adipiscing        |
+    |elit. Pellentesque|                  |          |          |                  |elit. Pellentesque|
+    |vitae nisl        |                  |          |          |                  |vitae nisl        |
+    |imperdiet.        |                  |          |          |                  |imperdiet.        |
+    +------------------+------------------+----------+----------+------------------+------------------+
