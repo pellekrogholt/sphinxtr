@@ -19,17 +19,21 @@ def depart_figtable_node(self, node):
 
 def visit_figtable_tex(self, node):
     if node['nofig']:
-        self.body.append('\n\n\\begin{table}\n\\capstart\n\\begin{center}\n')
+        return
+        #self.body.append('\n\n\\begin{table}\n\\capstart\n\\begin{center}\n')
     elif node['longtable']:
-        self.body.append('\n\n\\begin{longtable}\n\\capstart\n\\begin{center}\n')
+        return
+        #self.body.append('\n\n\\begin{longtable}\n\\capstart\n\\begin{center}\n')
     else:
         self.body.append('\n\n\\begin{figure}[tbp]\n\\capstart\n\\begin{center}\n')
 
 def depart_figtable_tex(self, node):
     if node['nofig']:
-        self.body.append('\n\\end{center}\n\\end{table}\n')
+        return
+        #self.body.append('\n\\end{center}\n\\end{table}\n')
     elif node['longtable']:
-        self.body.append('\n\\end{center}\n\\end{longtable}\n')
+        return
+        #self.body.append('\n\\end{center}\n\\end{longtable}\n')
     else:
         self.body.append('\n\\end{center}\n\\end{figure}\n')
 

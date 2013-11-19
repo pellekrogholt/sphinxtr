@@ -70,7 +70,7 @@ class DocTranslator(BaseTranslator):
         if 'p{' in colspec or 'm{' in colspec or 'b{' in colspec:
             self.body.append('\n\\bodyspacing\n')
 
-        self.body.append('\n\\begin{tabular}')
+        self.body.append('\n\\begin{longtable}')
 
         if colspec:
             self.body.append(colspec)
@@ -94,7 +94,7 @@ class DocTranslator(BaseTranslator):
 
         self.body.append('\\bottomrule\n')
 
-        self.body.append('\n\\end{tabular}\n')
+        self.body.append('\n\\end{longtable}\n')
 
         self.table = None
         self.tablebody = None
